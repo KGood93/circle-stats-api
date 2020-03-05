@@ -6,7 +6,7 @@ const helmet = require('helmet')
 const {NODE_ENV} = require('./config')
 
 const meetupRouter = require('./meetup/meetup-router')
-
+const statsRouter = require('./stats/stats-router')
 const app = express()
 
 const morganOption = (NODE_ENV === 'production')
@@ -18,6 +18,7 @@ app.use(helmet())
 app.use(cors())
 
 app.use('/meetups', meetupRouter)
+app.use('/stats', statsRouter)
 
 app.get('/', (req, res) => {
     res.send('Hello, world!')

@@ -13,13 +13,13 @@ const statsService = {
                 return rows[0]
             })
     },
-    getById(knex, meetid) {
-        return knex
-            .from('circle_stats')
-            .select('*')
-            .where('meet_id', meetid)
-            .first()
-    }
+    //getById(knex, meetid) {
+    //    return knex
+    //        .from('circle_stats')
+    //        .select('*')
+    //        .where('meet_id', meetid)
+    //        .first()
+    //}
 }
 
 module.exports = statsService

@@ -13,11 +13,11 @@ const meetupService = {
                 return rows[0]
             })
     }, 
-    deleteMeetup(knex, meetup_id) {
-        return knex('circle_meetups')
-            .where({meetup_id})
-            .delete()
-    }
+    //deleteMeetup(knex, meetup_id) {
+    //    return knex('circle_meetups')
+    //        .where({meetup_id})
+    //        .delete()
+    //}
 }
 
 module.exports = meetupService

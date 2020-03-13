@@ -9,6 +9,7 @@ const jsonParser = express.json()
 const serializeMeetup = meetup => ({
     meetup_id: meetup.meetup_id,
     meetup_name: xss(meetup.meetup_name),
+    meetup_note: xss(meetup.meetup_note),
 })
 
 meetupRouter

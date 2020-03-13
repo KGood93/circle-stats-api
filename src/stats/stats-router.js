@@ -10,7 +10,8 @@ const serializeStat = stat => ({
     date: stat.date,
     meet_id: stat.meet_id,
     location: xss(stat.location),
-    at_count: stat.at_count
+    attendance: stat.attendance,
+    notes: stat.notes,
 });
 
 statsRouter
@@ -23,8 +24,8 @@ statsRouter
             .catch(next)
     })
     .post(jsonParser, (req, res, next) => {
-        const {meet_id, location, at_count} = req.body
-        const newStat = {meet_id, location, at_count}
+        const {meet_id, location, attendance, notes} = req.body
+        const newStat = {meet_id, location, attendance, notes}
 
         for(const [key, value] of Object.entries(newStat))
             if(value == null)
